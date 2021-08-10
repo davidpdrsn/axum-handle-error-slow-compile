@@ -1,0 +1,15 @@
+[package]
+name = "axum-handle-error-slow-compile"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# using a git dependency here so the code being compiled is more accessible, but
+# the latest version crates.io has the same issue
+axum = { git = "https://github.com/tokio-rs/axum", branch = "main" }
+
+tokio = { version = "1.9.0", features = ["full"] }
+tower = { version = "0.4.8", features = ["util", "timeout"] }
+tower-http = { version = "0.1.1", features = ["trace"] }
